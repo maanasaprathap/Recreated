@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage":"https://maanasaprathap.github.io/UpdatedPortfolio",
+  "homepage":"https://maanasaprathap.github.io/vite-react-deploy",
 
   "scripts": {
     "dev": "vite",
