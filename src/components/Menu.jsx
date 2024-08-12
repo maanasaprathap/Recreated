@@ -32,7 +32,7 @@ export const Menu = (props) => {
   <MenuButton label="Skills" onClick={() => onSectionChange(1)} />
   <MenuButton label="Projects" onClick={() => onSectionChange(2)} />
   <MenuButton label="Contact" onClick={() => onSectionChange(3)} />
-  <MenuButton label="Resume" onClick={() => window.location.href = "https://github.com/maanasaprathap/maanasaDeploy/blob/main/MaanasaResumeFinal(1).pdf"} />
+  <MenuButton label="Resume" onClick={() => window.location.href = "https://github.com/maanasaprathap/resumeMaanasa/blob/main/MaanasaResumeFinal(1).pdf"} />
 </div>
 
       </div>

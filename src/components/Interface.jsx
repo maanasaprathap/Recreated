@@ -1,63 +1,9 @@
 
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
-import { useEffect } from 'react';
 import { currentProjectAtom, projects } from "./Projects";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"; // Import the icons
 import { useForm, ValidationError } from '@formspree/react';
-import Typical from "react-typical"; // Import the Typical component\
-
-
-// Cursor animation JavaScript
-const useCursorAnimation = () => {
-  useEffect(() => {
-    const cursor = document.querySelector('.cursor');
-    const cursorScale = document.querySelectorAll('.cursor-scale');
-    let mouseX = 0;
-    let mouseY = 0;
-
-    gsap.to({}, 0.016, {
-      repeat: -1,
-      onRepeat: function () {
-        gsap.set(cursor, {
-          css: {
-            left: mouseX,
-            top: mouseY,
-          },
-        });
-      },
-    });
-
-    window.addEventListener('mousemove', function (e) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    cursorScale.forEach((link) => {
-      link.addEventListener('mouseleave', () => {
-        cursor.classList.remove('grow');
-        cursor.classList.remove('grow-small');
-      });
-      link.addEventListener('mousemove', () => {
-        cursor.classList.add('grow');
-        if (link.classList.contains('small')) {
-          cursor.classList.remove('grow');
-          cursor.classList.add('grow-small');
-        }
-      });
-    });
-
-    return () => {
-      window.removeEventListener('mousemove', () => {});
-      cursorScale.forEach((link) => {
-        link.removeEventListener('mouseleave', () => {});
-        link.removeEventListener('mousemove', () => {});
-      });
-    };
-  }, []);
-};
-
-
 const Section = (props) => {
   const { children, mobileTop } = props;
 
@@ -98,26 +44,17 @@ export const Interface = (props) => {
   );
 };
 
-
-
 const AboutSection = (props) => {
   const { setSection } = props;
   return (
     <Section mobileTop>
       <h1 className="text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0">
-        <Typical
-          steps={[
-            "Hey!",
-            1500, // Pause for 1.5 seconds
-            150,  <br />,"I'm Maanasa",150, // Continue typing without backspacing
-          ]}
-          loop={1} // Run the animation only once
-          wrapper="span" // Use a span as the wrapper element
-          className="inline-block px-1 italic" // Add inline-block and italic styles
-        />
+        Hey, I'm
+        <br />
+        <span className=" px-1 italic">Maanasa</span>
       </h1>
       <motion.p
-        className="text-lg md:text-xl text-gray-800 mt-4"
+        className="text-lg md:text-xl text-gray-800 mt-4" // Slightly smaller font size
         initial={{
           opacity: 0,
           y: 25,
@@ -131,14 +68,14 @@ const AboutSection = (props) => {
           delay: 1.5,
         }}
       >
-      A passionate dev, coding with precision, 
+        A passionate dev, a revamping competitive 
         <br />
-        optimizing to sharpen every edge of<br/>
-        competitive programming expertise 
+        programmer and an avid problem-solver
       </motion.p>
       <motion.button
         onClick={() => setSection(3)}
-        className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-4 md:mt-16"
+        className={`bg-indigo-600 text-white py-4 px-8 
+      rounded-lg font-bold text-lg mt-4 md:mt-16`}
         initial={{
           opacity: 0,
           y: 25,
@@ -155,9 +92,10 @@ const AboutSection = (props) => {
         Contact me
       </motion.button>
 
+      {/* Icons directly below the Contact me button */}
       <div className="mt-8 flex justify-center space-x-6">
         <motion.a
-          href="https://github.com/maanasaprathap"
+          href="https://github.com/maanasaprathap" // Replace with your GitHub URL
           target="_blank"
           rel="noopener noreferrer"
           className="text-indigo-600 hover:text-indigo-800"
@@ -177,7 +115,7 @@ const AboutSection = (props) => {
           <FaGithub size={30} />
         </motion.a>
         <motion.a
-          href="https://www.linkedin.com/in/maanasa-prathap/"
+          href="https://www.linkedin.com/in/maanasa-prathap/" // Replace with your LinkedIn URL
           target="_blank"
           rel="noopener noreferrer"
           className="text-indigo-600 hover:text-indigo-800"
@@ -197,7 +135,7 @@ const AboutSection = (props) => {
           <FaLinkedin size={30} />
         </motion.a>
         <motion.a
-          href="https://www.instagram.com/maanasaprathap_/"
+          href="https://www.instagram.com/maanasaprathap_/" // Replace with your Instagram URL
           target="_blank"
           rel="noopener noreferrer"
           className="text-indigo-600 hover:text-indigo-800"
@@ -216,7 +154,6 @@ const AboutSection = (props) => {
         >
           <FaInstagram size={30} />
         </motion.a>
-      
       </div>
     </Section>
   );
