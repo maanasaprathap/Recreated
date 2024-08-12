@@ -49,7 +49,7 @@ const AboutSection = (props) => {
   return (
     <Section mobileTop>
       <h1 className="text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0">
-        Hey, I'm
+        Hey! I'm
         <br />
         <span className=" px-1 italic">Maanasa</span>
       </h1>
@@ -68,9 +68,10 @@ const AboutSection = (props) => {
           delay: 1.5,
         }}
       >
-        A passionate dev, a revamping competitive 
+        A passionate dev, coding with precision, 
         <br />
-        programmer and an avid problem-solver
+        and optimizing competitive programming
+        <br /> expertise
       </motion.p>
       <motion.button
         onClick={() => setSection(3)}

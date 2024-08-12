@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://maanasaprathap.github.io/maanasaNew",
+  "homepage": "https://github.com/maanasaprathap/Recreated",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
