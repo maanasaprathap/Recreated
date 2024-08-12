@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 export const projects = [
   {
     title: "DEVELOPER'S PORTFOLIO",
-    url: "",
+    url: "https://maanasaprathap.github.io/maanasaDeploy/",
     image: "projects/wawatmos.jpg",
   
   },

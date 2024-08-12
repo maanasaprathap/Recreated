@@ -45,7 +45,7 @@ export const Experience = (props) => {
     setTimeout(() => {
       setCharacterAnimation(section === 0 ? "Typing" : "Standing");
     }, 600);
-  }, [section]);
+  }, [section, menuOpened]);
 
   const characterGroup = useRef();
 
